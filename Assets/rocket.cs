@@ -23,27 +23,11 @@ public class rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()    {
-    
-        processUpdate();  
+        Thrust();
+        Rotate();  
     }
 
-
-    //private can only be called from our own code
-    private void processUpdate() {
-        if (Input.GetKey(KeyCode.Space)) {
-            print("thrust");
-
-            rigidbody.AddRelativeForce(Vector3.up);
-            if (!audioSource.isPlaying) {
-            audioSource.Play();
-            }
-        }
-        else {
-            audioSource.Stop();
-        }
-
-
-        
+    private void Thrust(){
         // thrust and rotate can happen same time so seperate if statement
         if (Input.GetKey(KeyCode.A)) {   //if key is pressed
             print("Rotate Left");
@@ -55,6 +39,24 @@ public class rocket : MonoBehaviour
 
         }
     }
+
+    //private can only be called from our own code
+    private void Rotate() {
+        if (Input.GetKey(KeyCode.Space)) {
+            print("thrust");
+
+            rigidbody.AddRelativeForce(Vector3.up);
+            if (!audioSource.isPlaying) {
+            audioSource.Play();
+            }
+        }
+        else {
+            audioSource.Stop();
+        }
+    }
+
+
+
 
 
 }
