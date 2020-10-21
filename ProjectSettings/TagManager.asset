@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - friend
+  - Dead
   layers:
   - Default
   - TransparentFX
